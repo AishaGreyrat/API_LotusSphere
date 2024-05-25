@@ -1,0 +1,27 @@
+{
+  "name": "api_lotussphere",
+  "version": "1.0.0",
+  "description": "API para la pagina de LotusSphere",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AishaGreyrat/API_LotusSphere.git"
+  },
+  "author": "Brito Argáez José Raúl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AishaGreyrat/API_LotusSphere/issues"
+  },
+  "homepage": "https://github.com/AishaGreyrat/API_LotusSphere#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.7"
+  }
+}
