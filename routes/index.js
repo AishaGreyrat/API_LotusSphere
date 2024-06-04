@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-// Definir la ruta de login
 router.get('/', (req, res) => {
-  res.send('API');
+  res.render('API');
 });
 
 module.exports = router;
