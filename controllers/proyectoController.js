@@ -3,28 +3,33 @@ const autenticador = require('../middlewares/autenticador');
 
 
 async function crearProyecto(req, res) {
-    const { user_id, titulo, descripcion, fecha_inicio, fecha_fin } = req.body;
+    const { userId, titulo, descripcion, fecha_inicio, fecha_fin } = req.body;
+
 
     console.log("newProyect = ", req.body);
+    console.log("user_id = ", userId);
+    console.log("titulo = ", titulo);
 
     try {
 
-        const usuarioExistente = await BuscarId(user_id);
-        console.log('user_id = ', user_id);
+        const usuarioExistente = await BuscarId(userId);
+        console.log('user_id = ', userId);
         if (usuarioExistente) {
             console.log("el usuario existe");
 
-            await proyectoService.registrarProyecto( user_id, titulo, descripcion, fecha_inicio, fecha_fin );
+            await proyectoService.registrarProyecto( userId, titulo, descripcion, fecha_inicio, fecha_fin );
             res.status(201).send('Proyecto registrado correctamente');
         } else {
             res.status(404).send('El usuario no existe');
         }
-
-
     } catch (error) {
         console.error('Error al registrar usuario en la API:', error);
         res.status(500).send('Error interno del servidor');
     }
+}
+
+async function BuscarId(user_id){
+    return result = proyectoService.obtenerPorId(user_id);
 }
 
 

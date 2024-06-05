@@ -30,7 +30,7 @@ async function obtenerTareas(proyectoId) {
 
 async function obtenerPorId(proyectoId) {
     try {
-        return await proyectoModel.obtenerId(proyectoId);
+        return await proyectoModel.verificarUsuarioPorId(proyectoId);
     } catch (error) {
         console.error('Error al obtener el proyecto por ID:', error.message);
         throw error;
